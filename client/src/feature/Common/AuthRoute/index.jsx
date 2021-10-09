@@ -4,23 +4,16 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 const AuthRouteContainer = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        rest.isAuth ? <Component {...props} /> : <Redirect to="/" />
-      }
-    />
-  );
+  return <Route {...rest} render={(props) => <Component {...props} />} />;
 };
 
 AuthRouteContainer.propTypes = {
   isAuth: PropTypes.bool.isRequired,
-  component: PropTypes.func.isRequired
+  component: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  isAuth: state.auth.signin.isAuth
+const mapStateToProps = (state) => ({
+  isAuth: true,
 });
 
 export const AuthRoute = connect(mapStateToProps)(AuthRouteContainer);

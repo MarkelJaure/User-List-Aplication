@@ -8,16 +8,10 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 
 import { getAuthUserData } from "./helpers/auth";
-import { signinSuccess, logout } from "./feature/Auth/Signin/actions";
 
 import { initAuthInterceptor } from "./helpers/api";
 
 const userAuth = getAuthUserData();
-if (userAuth) {
-  store.dispatch(signinSuccess(userAuth));
-}
-
-initAuthInterceptor(store, logout);
 
 const App = () => {
   return (
