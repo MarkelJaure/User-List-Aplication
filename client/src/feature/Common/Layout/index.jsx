@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Cabinet } from "./components/Cabinet";
 import { menuList } from "../../../config/menu";
-import { connect } from "react-redux";
 
 const LayoutContainer = (props) => {
   return (

@@ -2,7 +2,7 @@ const common = {};
 
 const dev = {
   LOGGER_ENABLE: true,
-  API_BASE_URL: "http://localhost:3003/api/"
+  API_BASE_URL: "http://localhost:6003/api/"
 };
 
 const prod = {
